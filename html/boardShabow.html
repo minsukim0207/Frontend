@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px; /*위아래px 좌우px*/
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /*그림자 추가*/
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+            box-shadow: 20px 20px 5px rgb(20 26 239/50%);
+        }
+    .container {
+        max-width: 800px;
+        margin: auto;
+    }
+    h1 {
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>점심 게시판</h1>
+        <ul>
+            <!--게시물 목록 작성-->
+            <li>
+                <h2>맥주 창고 역삼점</h2>
+                <p>메뉴 더보기 <a href="https://www.instagram.com/lunch_mz/?hl=ko">클릭</a></p>
+            </li>
+            <li>
+                <h2>명동 칼국수 역삼점</h2>
+                <p>명동 칼국수 9000원</p>
+            </li>
+        </ul>
+        <div>
+            <!--메뉴 추가란-->
+            <h2>
+                새 게시물 작성하기
+            </h2>
+            <form>
+                <input type="text" placeholder="제목">
+                <textarea placeholder="내용 작성하기"></textarea>
+                <button type="submit">작성 완료</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
