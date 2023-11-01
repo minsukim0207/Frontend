@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+}
+
+.homeHead {
+    text-align: center;
+    background-image: url("../coding.jpg");
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+
+.navigation {
+    float: left;
+    width: 20%;
+    height: 100vh;
+    background: #cac0c9;
+    padding: 20px;
+}
+
+.navigation ul {
+    font-size: 15px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.navigation ul li {
+    padding: 3px 0;
+}
+
+.main {
+    float: right;
+    padding: 20px;
+    width: 80%;
+    height: 100vh;
+    background-color: #f1f1f1;
+}
+
+.pagiarea {
+    width: 100%;
+    height: 400px;
+}
+
+.img-container {
+    width: 500px;
+    height: 400px;
+}
+
+.reply {
+    bottom: 40%;
+    width: 98%;
+    border: 20px;
+    background-color: white;
+}
+
+#commentInput {
+    width: 90%;
+    height: 25px;
+}
+
+.complete {
+    width: 5%;
+}
+
+footer {
+    /* background-color: #cfff33; */
+    background:linear-gradient(45deg, #5d5a64b0, rgb(70, 60, 70));   /* 그라데이션 색상 설정 */
+    padding: 10px;
+    text-align: center;
+    color: white;
+}
+
+@media (max-width:600px) {
+    nav, article{
+        width: 100%;
+        height: auto;
+    }
+}

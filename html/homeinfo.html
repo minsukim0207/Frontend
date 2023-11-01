@@ -3,80 +3,18 @@
     <head>
         <title>블로그</title>
         <meta charset="UTF-8">
-        <style>
-            * {
-                box-sizing: border-box;
-            }
-            .homeHead {
-                text-align: center;
-            }
-            header {
-                /* background-color: #6d5597b0; */
-                /* background:linear-gradient(to right, #b06ab3, #4568dc); */
-                background-image: url("./coding.jpg");
-                padding: 30px;
-                text-align: center;
-                font-size: 35px;
-                color: white;
-            }
-            nav {
-                float: left;
-                width: 30%;
-                height: 300px;
-                background: #cac0c9;
-                padding: 20px;
-            }
-            nav ul {
-                font-size: 20px;
-                list-style-type: none;
-                padding: 0;
-            }
-            article {
-                float: left;
-                padding: 20px;
-                width: 70%;
-                height: 300px;
-                background-color: #f1f1f1;
-            }
-            section::after {
-                content: "";
-                display: table;
-                clear: both;
-            }
-            .reply {
-                position: absolute;
-                bottom: 40%;
-                width: 100%;
-                border: 20px;
-                background-color: white;
-            }
-            footer {
-                /* background-color: #cfff33; */
-                background:linear-gradient(45deg, #5d5a64b0, rgb(70, 60, 70));   /* 그라데이션 색상 설정 */
-                padding: 10px;
-                text-align: center;
-                color: white;
-            }
-            @media (max-width:600px) {
-                nav, article{
-                    width: 100%;
-                    height: auto;
-                }
-            }
-        </style>
+        <link rel="stylesheet" href="./css/homeinfo-style.css">
     </head>
     <body>
         <div class="homeHead">
-        <h2>블로그 메인</h2>
+            <h2>블로그 메인</h2>
         </div>
-        <header>
-            <h2>이미지</h2>
-        </header>
-        <section>
+        <div>
+            <div class="navigation">
             <nav>
                 <ul>
-                    <li><a href="./boardShabow.html">블로그 소개</a></li>
                     <li>Java</li>
+                    <li>OracleDB</li>
                     <li>JavaScript</li>
                     <li>HTML</li>
                     <li>CSS</li>
@@ -84,37 +22,37 @@
                     <li>유용한 도구</li>
                 </ul>
             </nav>
-            <div>
-            <article>
-                <div class="reply">
-                <h1>댓글쓰기</h1>
-                <div>
-                <input type="text" placeholder="글 작성하기" id="commentInput">
-                <button type="submit" onclick="submitComplete()">작성완료</button>
-                <div id="comments"></div>
-                </div>
-                </div>
-                <script>
-                    function submitComplete() {
-                        const commentInput = document.getElementById("commentInput");
-                        const commentText = commentInput.value;
-                        if (commentText.trim() === "") {
-                            alert("댓글 작성 필요");
-                            return;
-                        }
-                        const commentsBox = document.getElementById("comments");
-                        const commentDIV = document.createElement("div");
-                        commentDIV.className = "comment";
-                        commentDIV.textContent = commentText;
-                        commentsBox.appendChild(commentDIV);
-                        commentInput.value = "";
-                    }
-                </script>
-            </article>
             </div>
-        </section>
+            <div class="main">
+                <div id="pagination">
+                    <button id="prevPage">Prev</button>
+                    <div class="img-container"></div>
+                    <button id="nextPage">Next</button>
+                </div>
+                <div>
+                    <div id="imgContainer">
+                        <img id="uploadImage" style="max-width: 100%;">
+                    </div>
+                    <div>
+                        <input type="file" id="fileInput" accept="image/*">
+                        <button id="uploadButton">업로드</button>
+                    </div>
+                </div>
+                <div>
+                    <div class="reply">
+                        <h1>댓글쓰기</h1>
+                        <div>
+                            <input type="text" placeholder="글 작성하기" id="commentInput">
+                            <button type="submit" id="complete" onclick="submitComplete()">작성완료</button>
+                            <div id="comments"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <footer>
-            <p>회사 소개 | 연혁 | 오시는 길</p>
+            <p>Footer</p>
         </footer>
+        <script src="./js/homeinfo-js.js"></script>
     </body>
 </html>
