@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>자바스크립트</title>
+</head>
+<body>
+</body>
+    <script>
+        // var let const
+        /*
+        var : 재할당, 재선언 가능. 함수 범위 내에서는 접근 가능
+        let : 재선언 불가능. 중괄호 안에서 선언한 let은 중괄호 안에서만 사용 가능
+        const : 재선언, 재할당 모두 불가능. 중괄호 위와 동일
+        */
+        let hi = "say ho";
+        let num = 5;
+        if (num > 2) {
+            let hello = "say hello";
+            console.log(hello); // 자바스크립트에 기존에 있던 함수로 메시지를 출력하거나 기능이 작동하지 않을 경우에 정보를 확인하고 기록하는데 사용
+        }
+
+        var age = 20;
+        if (age > 18) {
+            console.log("성인입니다");
+        } else {
+            console.log("미성년입니다");
+        }
+        
+        var number = 5;
+        var msg = number > 0 ? "양수입니다" : "음수입니다.";
+        console.log("숫자값 : ", msg);
+
+        // 배열
+        arrOne = [1, true, "hello"];
+        console.log(arrOne);
+        var arrTwo = Array(2, true, "hi");
+        console.log(arrTwo);
+        var arrThree = new Array(3, true, "bye");   // 빈 배열의 객체 생성
+        arrThree[88] = "bye";
+        console.log(arrThree);
+
+        // 자바에서는 class로 묶어줬다면 mehod()
+        // 자바스크립트에서는 function() 으로 묶어줌
+        // 함수란 특별한 목적을 수행할 수 있도록 설계된 독립적인 블록
+        // 블록 : 함수나 실행문이 {}로 묶여진 부분
+        // 자바스크립트 함수에서는 리턴값의 유무를 명시하지 않아도 됨
+
+        function addNumber(x, y) {
+            return x + y;
+        }
+        console.log(addNumber(2, 3));
+        
+        // 자바스크립트의 객체 : 데이터와 동작을 하나의 단위로 묶는데 사용되는 자료구조
+        // 객체 속성이 주어짐. 속성은 이름:값(key:value)로 주어짐
+        var person = {};
+
+        // 객체에 속성을 추가하는 방법은 2가지
+        // 속성 1 :
+        // person이라는 객체에 firstName 이름을 붙여줌
+        // firstName에 K라는 값을 부여
+        person.firstName = "K";
+        person.lastName = "H";
+        person.age = 30;
+
+        console.log(person);
+        // 속성 2 :
+        // 객체 생성과 동시에 이름과 값 추가
+        var book = {    // book이라는 객체를 생성함과 동시에 title, author 이름과 title, author 값 부여
+            title : "title",    // : 사용 주의
+            author : "author"
+        };
+
+        console.log(book);
+
+        // Date 객체 생성
+        var date = new Date();
+        /*
+        1. new Date("날짜를 나타내는 문자열");
+        2. new Date(밀리 단위 초);
+        3. new Date(년, 월, 일, 시, 분, 초, 밀리초);
+        */
+        // 연도를 표시하고자 할 때는 연도 전부 표시
+        var dateOne = new Date(2023, 11, 2, 15, 33, 0);
+        console.log(dateOne);
+
+        // document.html 참고
+    </script>
+</html>

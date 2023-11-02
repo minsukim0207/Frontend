@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>물건계산기</title>
+</head>
+<body>
+    <div>
+        <label for="item">상품명 : </label> 
+        <input type="text" id="item" placeholder="물건 이름">
+        <label for="price">가격 : </label>
+        <input type="number" id="price" placeholder="가격" value="0">
+        <label for="count">개수 : </label>
+        <input type="number" id="count" placeholder="개수" value="1">
+        <button onclick="addItem()">추가</button>
+    </div>
+    <div>
+        <ul id="itemList">
+            <!-- 추가한 물건 목록 나열 -->
+        </ul>
+    </div>
+    <div>
+        <p>총 가격 : <span id="totalPrice">0</span> 원</p>
+    </div>
+    <script>
+        let total = 0;
+
+        // 추가 버튼이 클릭될 때마다 실행되는 함수
+        function addItem() {
+            // document.querySelector() : 입력하는 곳의 값과 목록을 관리할 값을 가져옴
+            const itemInput = document.querySelector("#item");
+            const priceInput = document.querySelector("#price");
+            const countInput = document.querySelector("#count");
+            const itemList = document.querySelector("#itemList");
+            const totalPrice = document.querySelector("#totalPrice");
+
+            // 각 id값의 value를 알기 위해 value를 붙여줌
+            const itemValue = itemInput.value;
+            const priceValue = priceInput.value;
+            const countValue = countInput.value;
+            // const priceValue = parseInt(priceInput.value);
+            // const countValue = parseInt(countInput.value);
+            // parseInt() : 값을 정수로 변경해주는 메서드
+            // input type="number"를 작성해줬기 때문에 parseInt를 사용하지 않아도 숫자값이 들어가지만 다양한 변수가 생길 수 있기 때문에 parseInt() 사용을 권장
+            const totalPriceCount = priceValue * countValue;    // 물건의 총 가격을 계산하고 그 값을 저장한 곳
+
+            const listItem = document.createElement("li");  // 새로운 물건 항목을 생성한 후, 해당 항목을 목록에 추가
+            listItem.textContent = `${itemValue} | 가격 : ${priceValue} 원 X ${countValue} = ${totalPriceCount} 원`;    // textContent : 물건 이름 가격 개수 총 가격을 보여줌. 텍스트 내용을 나타낼 수 있게 해주는 속성
+            itemList.appendChild(listItem);
+            
+            total += totalPriceCount;
+            totalPrice.textContent = total;
+
+            itemInput.value = "";
+            priceInput.value = "0";
+            countInput.value = "1";
+        }
+    </script>
+</body>
+</html>

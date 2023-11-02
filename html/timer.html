@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>타이머 이용하기</title>
+</head>
+<body>
+    <div id="msg"></div>
+    <script>
+        // 5초 후에 메시지 보이게 하는 함수
+        function displayMsg() {
+            var msgDiv = document.querySelector("#msg");
+            msgDiv.innerHTML = "hi";
+        }
+
+        // setTimeout() : 자바스크립트에 내장되어 있는 타이머 함수 중 하나
+        // 지정한 시간이 지나면 지정된 함수를 실행
+        // setTimeout(callback, delay);
+        // callback : 함수나 코드블록을 지정해서 불러온 후 실행
+        // delay : 대기 시간 지정
+        setTimeout(displayMsg, 5000);
+    </script>
+</body>
+</html>

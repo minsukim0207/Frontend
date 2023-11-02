@@ -1,3 +1,5 @@
+
+let total = 0;
 function submitComplete() {
     const commentInput = document.getElementById("commentInput");
     const commentText = commentInput.value;
@@ -81,3 +83,28 @@ document.querySelector("#uploadButton").addEventListener("click", function() {
         alert("이미지 파일을 선택하세요.");
     }
 });
+
+// 물건 총 가격
+function addItem() {
+    const itemInput = document.querySelector("#item");
+    const priceInput = document.querySelector("#price");
+    const countInput = document.querySelector("#count");
+    const itemList = document.querySelector("#itemList");
+    const totalPrice = document.querySelector("#totalPrice");
+
+    const itemValue = itemInput.value;
+    const priceValue = priceInput.value;
+    const countValue = countInput.value;
+    const totalPriceCount = priceValue * countValue;
+
+    const listItem = document.createElement("li");
+    listItem.textContent = `${itemValue} | 가격 : ${priceValue} 원 X ${countValue} = ${totalPriceCount} 원`;
+    itemList.appendChild(listItem);
+
+    total += totalPriceCount;
+    totalPrice.textContent = total;
+
+    itemInput.value = "";
+    priceInput.value = "0";
+    countInput.value = "1";
+}
