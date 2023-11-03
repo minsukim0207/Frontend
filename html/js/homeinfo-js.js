@@ -108,3 +108,10 @@ function addItem() {
     priceInput.value = "0";
     countInput.value = "1";
 }
+
+// jQuery 이미지
+$(function() {
+    $("button").on("click", function() {
+        $("img[alt='coding']").attr("src", "ㅋ.png");
+    });
+});

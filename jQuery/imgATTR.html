@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>이미지 변경</title>
+    <script src="./js/jquery-3.7.1.js"></script>
+    <script>
+        /*
+        attr() : 제이쿼리의 메서드
+            1. attr() 사용해서 속성 읽기
+                var value = $("선택자").attr("속성이름");
+            2. attr() 사용해서 속성값 변경
+                $("선택자").attr("속성이름", "새로운값");
+            특정 요소만 변경하고 싶다면 id, class, name, alt 등의 속성값을 이용
+            $("선택자[속성값]").attr();
+        */
+        $(function() {
+            $("button").on("click", function() {
+                $("img[alt='Image1']").attr("src", "./img/5.jpg");
+                $("img[alt='Image2']").attr("src", "./img/4.jpg");
+            });
+        });
+    </script>
+    <style>
+        img {
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <button>이미지 변경</button><br>
+    <img src="./img/1.jpg" alt="Image1">
+    <img src="./img/2.jpg" alt="Image2">
+</body>
+</html>

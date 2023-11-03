@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ElementSave</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script>
+        $(function() {
+            // 버튼 클릭 시 동작 함수
+            $("button").on("click", function() {
+                $(":checked").next().text("체크확인완료");
+                /*
+                $(":checked") : html내 모든 체크박스 요소 선택
+                .next() : 위 체크박스 다음 요소. 여기서는 <span>에 해당
+                .text() : 선택된 요소에 새로운 text 삽입
+                */
+            });
+        });
+
+        // li 요소 개수
+        $(function () {
+            var items = $("li");    // <li> 모두 선택해서 변수 items에 저장
+            $("button").on("click", function() {
+                $("#len").text("li의 개수는 " + items.length);
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>li 요소 선택한 후 개수 구하기</h1>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+    </ul>
+    <button>li 개수 확인</button>
+    <p id="len"></p>
+    <br><br><br><br><br>
+    <h1>form input 요소 선택</h1>    
+    <form action="">
+        <input type="checkbox" name="inputName" value="one"><span>one</span><br>
+        <input type="checkbox" name="inputName" value="two"><span>two</span><br>
+        <input type="checkbox" name="inputName" value="three"><span>three</span><br>
+    </form>
+    <button>체크 확인</button>
+</body>
+</html>
